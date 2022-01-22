@@ -4,12 +4,11 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-input-button-unit',
   template: `
     <input
+      #inputElementRef
       [value]="title"
-      (click)="clearInput()"
       (keyup.enter)="changeTitle($event.target.value)"
     />
-    <button (click)="changeTitle('Button Clicked!')">Save</button>
-    <h2>{{ title }}</h2>
+    <button (click)="changeTitle(inputElementRef.value)">Save</button>
   `,
   styleUrls: ['./input-button-unit.component.scss'],
 })
@@ -22,9 +21,5 @@ export class InputButtonUnitComponent implements OnInit {
 
   changeTitle(newTitle: string): void {
     this.title = newTitle;
-  }
-
-  clearInput() {
-    this.title = '';
   }
 }
