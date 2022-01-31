@@ -7,7 +7,7 @@ import { TodoItem } from '../interfaces/todo-item';
   styleUrls: ['./todo-item.component.scss'],
 })
 export class TodoItemComponent implements OnInit {
-  @Input() item: any;
+  @Input() item: TodoItem;
 
   constructor() {}
 
